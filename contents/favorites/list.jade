@@ -1,6 +1,7 @@
 h3 Results
-each item in data.results
-    pre= JSON.stringify(item)
-
-h3 Raw data
-pre= JSON.stringify(data, null, ' ')
+each item in data
+	div(style="border:1px solid #C4BCE3; padding-left:10px; border-radius:10px;")
+		h5= "Created_at:   " + item.created_at
+		h5= "Retweet_count:  " + item.retweet_count
+		h5= "Favorite_count:  " + item.favorite_count
+		h5= "Text:   " + item.text
