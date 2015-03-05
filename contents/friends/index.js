@@ -2,17 +2,15 @@ var friends = {
 
     searchByFriends: function(title) {
 
-        title.replace(" ", "%20")
+        title.replace(" ", "%20");
 
-        $.get("https://api.spotify.com/v1/search?q="+title+"&type=album", function(data) {
+        $.get("https://protected-forest-7175.herokuapp.com/friends/list", function(data) {
 
-            console.log(data.friends.items)
             if (data){
-                $.get("/cat-spotify/albums/list.jade", function(template) {
+                $.get("/twitter-jquery/friends/list.jade", function(template) {
                     var html = jade.render(template, {
-                        data: data
-                    })
-                    console.log(html)
+                        friends: data.friends.users
+                    });
                     $("#list").html(html)
                 })
             }
@@ -24,13 +22,13 @@ var friends = {
     load: function() {
 
         $.get("/twitter-jquery/contents/friends/ui.jade", function(template) {
-            var html = jade.render(template)
-            $("#searchdiv").html(html)
-        })
+            var html = jade.render(template);
+            $("#ui").html(html)
+        });
 
         // default search results
-        albums.searchByFriends('Babel')
+        friends.searchByFriends('Babel')
 
     }
 
-}
+};
