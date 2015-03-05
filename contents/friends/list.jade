@@ -1,6 +1,12 @@
 h3 Results
-each item in data.results
-    pre= JSON.stringify(item)
+table.table.table-striped
+	thead
+		tr
+			th Name 
 
-h3 Raw data
-pre= JSON.stringify(data, null, ' ')
+	tbody
+	each friend in data.friends.items
+		tr
+			td
+				img(src=album.images[2].url)
+			td= album.name
