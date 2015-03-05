@@ -1,6 +1,7 @@
-h3 Results
-each item in data.results
-    pre= JSON.stringify(item)
+h3 Tweets
+input(type="search")#tweets_search
+button.class(onclick="tweets.searchByQuery($('#tweets_search').val())") Search
+span#loading
 
-h3 Raw data
-pre= JSON.stringify(data, null, ' ')
+each tweet in tweets
+    pre= JSON.stringify(tweet, null, 2)
