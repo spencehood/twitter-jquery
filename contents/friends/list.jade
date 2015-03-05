@@ -5,8 +5,8 @@ table.table.table-striped
 			th Name 
 
 	tbody
-	each friend in data.friends.items
+	each friend in friends
 		tr
 			td
-				img(src=album.images[2].url)
-			td= album.name
+				img(src=friend.profile_image_url_https)
+			td= friend.name
