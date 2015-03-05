@@ -1,9 +1,9 @@
 $( "#tweets" ).on( "click", function( event ) {
-    listtweets()
+    tweets.load();
 });
 
 $( "#followers" ).on( "click", function( event ) {
-    listfollowers()
+    followers.load();
 });
 
 $( "#friends" ).on( "click", function( event ) {

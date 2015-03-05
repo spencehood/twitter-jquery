@@ -1,21 +1,17 @@
 /**
  * Created by Tanvi on 2/27/15.
  */
-function listfollowers(id){
+var followers = {
 
-   // console.log('viewing business id = ', id)
+    load: function () {
+        $.get("https://protected-forest-7175.herokuapp.com/followers/list", function(data) {
 
-    $.get("https://rocky-everglades-5328.herokuapp.com/business/" + id, function(data) {
+            $.get("/twitter-jquery/followers/list.jade", function(template) {
 
-        var result = data
-        $.get("/yelp-jquery/templates/business.jade", function(template) {
+                var html = jade.render(template, {friends: data.friends.users});
 
-            var html = jade.render(template, {item: result})
-
-            $("#business").html(html)
-
+                $("#list").html(html)
+            })
         })
-
-    })
-
-}
+    }
+};
