@@ -3,7 +3,7 @@ $( "#tweets" ).on( "click", function( event ) {
 });
 
 $( "#followers" ).on( "click", function( event ) {
-    listfollowers()
+    followers.load();
 });
 
 $( "#friends" ).on( "click", function( event ) {
