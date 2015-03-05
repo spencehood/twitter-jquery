@@ -7,11 +7,11 @@ $( "#followers" ).on( "click", function( event ) {
 })
 
 $( "#friends" ).on( "click", function( event ) {
-    listfriends()
+    friends.load()
 })
 
 $( "#favorites" ).on( "click", function( event ) {
-    listfavorites()
+    favorites.load()
 })
 
 
